@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/main.css" />
+
+    title= pageTitle
+
+  body#body 
+    <header class="myheader">
+      block main-header
+        <h1>Courses4Arab</h1>
+
+      <nav>
+        <ul class="parent">
+          <li>
+            <a href="">
+              AaaLL Courses
+            </a>
+          </li>
+          <li >
+            <a href="/add-new-article">  Add new article </a>
+          </li>
+          <li id="dark" class="mode">change mode</li>
+          <li><a href=""> Support Us </a></li>
+        </ul>
+      </nav>
+    </header>
+
+    block unique
+      <main id="main">
+        <section>
+          <h1>Trending Articles &#128293;</h1>
+
+          <div class="parent-of-articles">
+            //- Showing data (articles) from DB
+            if articlesArr.length == 0
+              article
+                h2 There are no articles to be shown &#8987; &#8987; 
+            else 
+              each item in articlesArr 
+                article 
+                  h2= item.title 
+                  p 
+                    |  #{item.summary}
+                    |
+                    //- the following href will open the detailed page with dynamic content from DB
+                    a(href="/all-articles/" + item._id ,class="btn") show more
+            //- End showing data (articles) from DB 
+          </div>
+        </section>
+      </main>
+
+
+    //- the scripts 
+    block scripts
+      <script src="/main.js"></script>
+

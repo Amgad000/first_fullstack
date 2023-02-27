@@ -1,0 +1,21 @@
+extends index.pug 
+
+block main-header 
+  <h1>
+      <a style="all: unset; cursor: pointer;" href="/">Courses4Arab</a>
+  </h1>
+
+block unique
+  h1= choosenArticle.title
+  p(style={
+    padding:'40px 10px',
+    'text-align':'center',
+    'font-size': '1.5rem'
+    }) 
+    | #{choosenArticle.body}
+
+  button(class="create delete",data-id= choosenArticle._id) Delete Article
+
+
+block append scripts 
+  script(src="/fetch-del.js") 
