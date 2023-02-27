@@ -19,23 +19,22 @@ app.use(express.static("public")); // reach any file inside public directly with
 app.use(express.urlencoded({extended: true}));
 
 /* For live reload */
-const path = require("path");
-const livereload = require("livereload");
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname, "public"));
+// const path = require("path");
+// const livereload = require("livereload");
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(path.join(__dirname, "public"));
 
-const connectLivereload = require("connect-livereload");
-app.use(connectLivereload());
+// const connectLivereload = require("connect-livereload");
+// app.use(connectLivereload());
 
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 100);
-});
+// liveReloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh("/");
+//   }, 100);
+// });
 
 /* Mongoose */
 const mongoose = require("mongoose");
-const exp = require("constants");
 mongoose.set("strictQuery", true);
 
 mongoose

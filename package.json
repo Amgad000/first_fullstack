@@ -10,6 +10,9 @@
   "name": "learning-project",
   "version": "1.0.0",
   "main": "app.js",
+  "engines": {
+    "node": ">=18.12.1"
+  },
   "scripts": {
     "start": "node app.js",
     "watch": "nodemon --ext js,pug --ignore public"
